@@ -275,7 +275,7 @@ class Carousel extends React.Component<CarouselProps, any> {
     const count = props.children ? props.children.length || 1 : 0;
     const selectedIndex = count > 1 ? Math.min(props.selectedIndex as number, count - 1) : 0;
     const width = e.nativeEvent.layout.width;
-    const offsetX = width * (selectedIndex + (props.infinite ? 1 : 0));
+    const offsetX = width * selectedIndex;
     this.setState({
       width,
       offset: { x: offsetX, y: 0 },
